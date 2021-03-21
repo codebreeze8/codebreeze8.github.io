@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>C_数组实例 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="修改密码 getchar()#define _CRT_SECURE_NO_WARNINGS 1 #include &lt;stdio.h&gt;  int main() &amp;#123;     int ret &#x3D; 0;     char ch;     &#x2F;&#x2F;char password[20] &#x3D; &amp;#123; 0 &amp;#125;;    &#x2F;&#x2F; 为&quot; &quot;？     char pass">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C_数组实例">
+<meta property="og:url" content="http://example.com/2021/02/06/C-%E6%95%B0%E7%BB%84%E5%AE%9E%E4%BE%8B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="修改密码 getchar()#define _CRT_SECURE_NO_WARNINGS 1 #include &lt;stdio.h&gt;  int main() &amp;#123;     int ret &#x3D; 0;     char ch;     &#x2F;&#x2F;char password[20] &#x3D; &amp;#123; 0 &amp;#125;;    &#x2F;&#x2F; 为&quot; &quot;？     char pass">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-06T14:47:14.000Z">
+<meta property="article:modified_time" content="2021-02-06T14:50:25.070Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-C-数组实例" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/06/C-%E6%95%B0%E7%BB%84%E5%AE%9E%E4%BE%8B/" class="article-date">
+  <time class="dt-published" datetime="2021-02-06T14:47:14.000Z" itemprop="datePublished">2021-02-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      C_数组实例
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="修改密码-getchar"><a href="#修改密码-getchar" class="headerlink" title="修改密码 getchar()"></a>修改密码 getchar()</h2><pre><code>#define _CRT_SECURE_NO_WARNINGS 1
+#include &lt;stdio.h&gt;
+
+int main() &#123;
+    int ret = 0;
+    char ch;
+    //char password[20] = &#123; 0 &#125;;    // 为&quot; &quot;？
+    char password[20] = &#123; &quot;1234&quot; &#125;;
+    
+    printf(&quot;初始密码为：%s\n&quot;, password);
+    printf(&quot;请输入密码：&quot;);
+    scanf(&quot;%s&quot;, password);
+    printf(&quot;您输入的密码为：%s\n&quot;, password);
+    printf(&quot;请确认（Y/N）：\n&quot;);
+    
+    /*    
+        while (ch = getchar() != &#39;\n&#39;) &#123;
+            ;
+        &#125;    
+        当键盘上输入password为 “123 abc”时，scanf函数读走空格前的字符串，
+        缓冲区剩下“空格abc\n”（&#39;\n&#39;是敲下的回车），此时需要将缓存区清空，使得getchar()
+        接收到的字符是键盘上从新输入的第一个字符
+    */
+    while (ch = getchar() != &#39;\n&#39;) &#123;
+        ;
+    &#125;
+     while (1) &#123;
+         ret = getchar();
+         while (ch = getchar() != &#39;\n&#39;) &#123;
+             ;
+         &#125;
+        if (&#39;Y&#39; == ret || &#39;y&#39; == ret) &#123;
+            printf(&quot;确认成功!&quot;);
+            printf(&quot;您的密码为：%s\n&quot;, password);
+            break;
+        &#125;
+        else if (&#39;n&#39; == ret || &#39;N&#39; == ret) &#123;
+            printf(&quot;确认失败\n&quot;);
+            break;
+        &#125;
+        
+        else &#123;
+            printf(&quot;请确认（Y/N）\n&quot;);
+            continue;
+            //继续下一次循环，此行将不再执行    
+            printf(&quot;看不到我吧？&quot;);
+            
+        &#125;
+    &#125;
+
+    return 0;
+&#125; 
+</code></pre>
+<h2 id="折半查找"><a href="#折半查找" class="headerlink" title="折半查找"></a>折半查找</h2><pre><code>#define _CRT_SECURE_NO_WARNINGS 1
+#include &lt;stdio.h&gt;
+//折半查找 Maxtime = log2n；
+int main() &#123;
+    int arr[] = &#123; 1,2,3,4,5,6,7,9,10 &#125;;
+    int demo = 0;
+    int left;    
+    int right;
+    int mid;
+    int sz = sizeof(arr) / sizeof(arr[0]);//数组元素个数
+    
+//1 2 3 4 5 6 7 9 10 11
+//0 1 2 3 4 5 6 7  8  9  
+//left --&gt; mid  &lt;-- right
+// 4 left=mid+1=5    right==9        mid==7
+// 7 left==5    right=mid-1=6    mid =5
+// 5 left==mid+1=6 right==6 mid 6
+// 6 left==mid+1=7 right==6 交错
+
+scanf(&quot;%d&quot;, &amp;demo);
+left = 0;
+right = sz - 1;
+mid = (left + right)/2;
+
+while (left&lt;=right) &#123;
+    if (arr[mid]&gt;demo) &#123;
+        right = mid - 1;     //当前元素arr[mid]比demo大，需要向左移动一位
+        mid = (left + right) / 2;
+        &#125;
+    else if (arr[mid]&lt;demo) &#123;
+            left = mid+1;    //当前元素arr[mid]比demo小，需要向右移动一位
+            mid = (left + right) / 2;
+        &#125;
+    else &#123;
+            printf(&quot;你查的元素的下标是：%d\n&quot;, mid);
+            break;
+        &#125;
+&#125;
+if (left &gt; right) &#123;
+    printf(&quot;没有找到\n&quot;);
+&#125;
+return 0;
+&#125;
+</code></pre>
+<h2 id="左到右打印字符串"><a href="#左到右打印字符串" class="headerlink" title="左到右打印字符串"></a>左到右打印字符串</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#define _CRT_SECURE_NO_WARNINGS 1</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">#include &lt;windows.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">int main() &#123;</span><br><span class="line">	char arr[] &#x3D; &quot;Wecome to bit!!!!&quot;;	&#x2F;&#x2F;有\0结尾，长度加一</span><br><span class="line">	char ayy[] &#x3D; &quot;*****************&quot;;</span><br><span class="line">	int left &#x3D; 0;</span><br><span class="line">	&#x2F;&#x2F;int right &#x3D; (sizeof(arr) &#x2F; sizeof(arr[0]))-2;	&#x2F;&#x2F;err</span><br><span class="line">	 int right &#x3D; strlen(arr)-1; &#x2F;&#x2F;strlen()遇到\0结束</span><br><span class="line">	int mid &#x3D; 0;</span><br><span class="line">	int sz &#x3D; 0;</span><br><span class="line">	int i &#x3D; 0;</span><br><span class="line">	int n &#x3D; 0;</span><br><span class="line">	while (left&lt;&#x3D;right) &#123;</span><br><span class="line">		ayy[left] &#x3D; arr[left];</span><br><span class="line">		ayy[right] &#x3D; arr[right];</span><br><span class="line">		printf(&quot;%s\n&quot;, ayy);</span><br><span class="line">		left++;</span><br><span class="line">		right--;</span><br><span class="line">		Sleep(1000);</span><br><span class="line">		system(&quot;cls&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/06/C-%E6%95%B0%E7%BB%84%E5%AE%9E%E4%BE%8B/" data-id="ckmj8yxpj000034dzdbgk5xhb" data-title="C_数组实例" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/02/10/%E8%BF%9B%E5%88%B6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          进制
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/02/06/English-words/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%83%8C%E5%8D%95%E8%AF%8D/" rel="tag">背单词</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E8%83%8C%E5%8D%95%E8%AF%8D/" style="font-size: 10px;">背单词</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/03/21/%E6%B1%82%E6%9C%80%E5%A4%A7%E5%80%BC/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/21/%E6%89%93%E5%8D%B0%E5%87%BD%E6%95%B0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/21/%E4%B8%89%E4%B8%AA%E5%AD%97%E7%AC%A6%E6%AF%94%E8%BE%83%E5%A4%A7%E5%B0%8F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/21/package/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/21/buffer/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
